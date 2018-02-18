@@ -1,0 +1,2 @@
+var LetterArr = []
+var 
