@@ -10,19 +10,21 @@ var randomgen = LetterArr[Math.floor(Math.random()
 //returns randomgen to the console
      console.log (randomgen)
 
-     document.onkeyup = function(event) {
-         var Guess = event.key;
-        
+     document.onkeyup = function() {
+         var Guess = String.fromCharCode(event.keyCode).toLowerCase();
+        console.log(Guess)
+
          if( Guess === randomgen){
-             wins++;
-         } 
-         else { Guess--;}
+             wins++;      
+             document.getElementById("Wins").innerHTML = "Wins: " + wins;} 
+         else { Guess--;
+            document.getElementById("GuessLeft").innerHTML = "Guesses left: " + Guess;}
 
         if (guess = 0){
-            losses++
-        }
-     }
-
-     document.getElementById('Wins').innerHTML = "Wins: " + wins;
-    document.getElementById('loss').innerHTML = "loss: " + losses;
-    document.getElementById('GuessLeft').innerHTML = "Guesses left: " + Guess;
+            losses++;
+        document.getElementById("loss").innerHTML = "loss: " + losses;}
+     
+    
+    
+    
+}
